@@ -13,153 +13,217 @@
   <link rel="stylesheet" type="text/css" href="css/site_global.css"/>
   <link rel="stylesheet" type="text/css" href="css/master_a-master.css"/>
   <link rel="stylesheet" type="text/css" href="css/index.css" id="pagesheet"/>
+  <script type="text/javascript" src="scripts/javascript.js"></script>
    </head>
 
+  <script type="text/javascript"> 
+
+	function stopRKey(evt) { 
+  		var evt = (evt) ? evt : ((event) ? event : null); 
+  		var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null); 
+  		if ((evt.keyCode == 13) && (node.type=="text"))  {return false;} 
+	} 
+
+	document.onkeypress = stopRKey; 
+
+  </script>
+
  <body>
-  <div class="split left">
+<div id="mainContainer" style="z-index:0;">
+  <div class="split left" id="toTheLeft">
+	<button type="button" class="buttonStyleFour" onclick="swopScreens()">X</button>
 	<table style="width:100%;height:100%">
 		<tr>
-			<td style="width:50%;padding:5%;">
-				<h2 style="color:#ff944d;font-family:'Dejavu Sans Mono';"><b>THE SEARCH</b></h2>
-    				<p style="color:#ff944d;font-family:'Dejavu Sans Mono';">Music + You</p>
+			<td style="width:50%;padding:5%;text-align:left;vertical-align:top;">
+				<h2 style="color:#ff944d;"><b>THE SEARCH</b></h2>
+    				<p style="color:#ff944d;">Music + You</p>
 			</td>
-			<td style="width:50%;padding:5%;">
-    				<p style="color:#ff944d;font-family:'Dejavu Sans Mono';">the search for the himalayan mountain people and the ladder to cosmic consciousness</p>
-			</td>
-		</tr>
-		<tr>
-			<td style="width:50%;padding:5%;">
-				<h2 style="color:#ffff4d;font-family:'Dejavu Sans Mono';"><b>DATES</b></h2>
-    				<p style="color:#ffff4d;font-family:'Dejavu Sans Mono';">Dec 30 - Jan 1</p>
-			</td>
-			<td style="width:50%;padding:5%;">
-    				<p style="color:#ffff4d;font-family:'Dejavu Sans Mono';">a gathering of humans that fare well into the new year with bountiful positivity</p>
+			<td style="width:50%;padding:5%;text-align:left;vertical-align:top;">
+    				<p style="color:#ff944d;">the search for the himalayan mountain people and the ladder to cosmic consciousness</p>
 			</td>
 		</tr>
 		<tr>
-			<td style="width:50%;padding:5%;">
-				<h2 style="color:#4db8ff;font-family:'Dejavu Sans Mono';"><b>VENUE</b></h2>
-    				<p style="color:#4db8ff;font-family:'Dejavu Sans Mono';">Utopia</p>
+			<td style="width:50%;padding:5%;text-align:left;vertical-align:top;">
+				<h2 style="color:#ffff4d;"><b>DATES</b></h2>
+    				<p style="color:#ffff4d;">Dec 30 - Jan 1</p>
 			</td>
-			<td style="width:50%;padding:5%;">
-    				<p style="color:#4db8ff;font-family:'Dejavu Sans Mono';">a place close yet remote, special for those who know and those who dont know</p>
+			<td style="width:50%;padding:5%;text-align:left;vertical-align:top;">
+    				<p style="color:#ffff4d;">a gathering of humans that fare well into the new year with bountiful positivity</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:50%;padding:5%;text-align:left;vertical-align:top;">
+				<h2 style="color:#4db8ff;"><b>VENUE</b></h2>
+    				<p style="color:#4db8ff;">Utopia</p>
+			</td>
+			<td style="width:50%;padding:5%;text-align:left;vertical-align:top;">
+    				<p style="color:#4db8ff;">a place close yet remote, special for those who know and those who don't know</p>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:50%;padding:5%;text-align:left;vertical-align:top;">
+				<h2 style="color:#33ff33;"><b>TICKETS</b></h2>
+    				<p style="color:#33ff33;">Did you know</p>
+			</td>
+			<td style="width:50%;padding:5%;text-align:left;vertical-align:top;">
+    				<p style="color:#33ff33;">a celebration of the music and times you've had, would rather have, might never have had</p>
 			</td>
 		</tr>
 	</table>
-</div>
+  </div>
 
-<div class="split right">
+  <div id="myForm" class="popup" style="display:none;">
+		<button type="button" class="buttonStyleThree" onclick="closeForm()">X</button>
+                <h2><b>TICKETS</b></h2>
+		</br>
+		</br>
+    		<p>WE SEND OUR TICKET INFO VIA EMAIL</p>
+		<p>FOLLOW THE INSTRUCTIONS BELOW</p>
+		</br>
+		</br>
+    		<p>ARE YOU KAK OR LEKKER?</p>
+	        </br>
+		<fieldset>
+                  <div class="radioContainer" style="display: inline;">
+		    <div class="control__indicator" style="display: inline;"></div>
+		    <button id="kak" type="button" class="buttonStyleRadio" style="display:inline;" onclick="chooseKak()"></button>
+                    <input type="radio" class="radio" name="x" value="a" id="a" style="display: inline;" />
+                    <label for="a" style="display: inline;">KAK &emsp;</label>
+		    <div class="control__indicator" style="display: inline;"></div>
+		    <button id="lekker" type="button" class="buttonStyleRadio" style="display:inline;" onclick="chooseLekker()"></button>
+                    <input type="radio" class="radio" name="x" value="y" id="y" style="display: inline;" />
+                    <label for="y" style="display: inline;">LEKKER &emsp;</label>
+		    <div class="control__indicator" style="display: inline;"></div>
+		    <button id="kaklekker" type="button" class="buttonStyleRadio" style="display:inline;" onclick="chooseKakLekker()"></button>
+                    <input type="radio" class="radio" name="x" value="z" id="z" style="display: inline;" />
+                    <label for="z" style="display: inline;">KAK LEKKER</label>
+                  </div>
+                </fieldset>
+                </br>
+		</br>
+		<div style="border-bottom: 1px solid black;">
+		  <input type="text" name="fname" placeholder="insert email" style="display:inline;"><button type="button" class="buttonStyleTwo" onclick="sendEmail()" style="display:inline;">SEND</button>
+		</div>
+		<input type="text" id="attitude" name="attitude" style="display:none;">
+		</br>
+		<p id="successMessage" style="text-align:center;visibility:hidden;">DONE! CHECK YOUR INBOX</p>
+		<p id="kakMessage" style="text-align:center;visibility:hidden;">DON'T BE KAK, BE LEKKER</p>
+		</br>
+		</br>
+        </div>
+
+  <div class="split right" id="toTheRight">
+	<button type="button" class="buttonStyleFour" onclick="swopScreens()">?</button>
 	<div>
 		</br>
+		<h2 style="text-align:center;"><b>SEARCH</b></h2>
 		</br>
-		<h2 style="text-align:center;font-family:'Dejavu Sans Mono';"><b>SEARCH</b></h2>
 		</br>
-		</br>
-    		<p style="text-align:center;font-family:'Dejavu Sans Mono';">30 DEC ‘18 – 1 JAN 19</p>
-		<p style="text-align:center;font-family:'Dejavu Sans Mono';">FESTIVAL / PARTY / COMMUNITY / MOVEMENT</p>
+    		<p style="text-align:center;">30 DEC '18 - 1 JAN '19</p>
+		<p style="text-align:center;">FESTIVAL / PARTY / COMMUNITY / MOVEMENT</p>
 		</br>
 		</br>
 		</br>
 	</div>
 	<div>
-		<h2 style="text-align:center;font-family:'Dejavu Sans Mono';"><b>PROGRAMME</b></h2>
+		<h2 style="text-align:center;"><b>PROGRAMME</b></h2>
 		</br>
 		</br>
 		<table style="width:100%;height:100%">
 			<tr>
 				<td style="width:50%;padding:1%;">
-					<p style="text-align:right;font-family:'Dejavu Sans Mono';">CUITO</p>
+					<p style="text-align:right;">CUITO</p>
 				</td>
 				<td style="width:50%;padding:1%;">
-					<p style="text-align:left;font-family:'Dejavu Sans Mono';">CUITO</p>
-				</td>
-			</tr>
-			<tr>
-				<td style="width:50%;padding:1%;">
-					<p style="text-align:right;font-family:'Dejavu Sans Mono';">ARYUJASSIKA</p>
-				</td>
-				<td style="width:50%;padding:1%;">
-					<p style="text-align:left;font-family:'Dejavu Sans Mono';">ARYUJASSIKA</p>
+					<p style="text-align:left;">CUITO</p>
 				</td>
 			</tr>
 			<tr>
 				<td style="width:50%;padding:1%;">
-					<p style="text-align:right;font-family:'Dejavu Sans Mono';">OTHER DJs</p>
+					<p style="text-align:right;">ARYUJASSIKA</p>
 				</td>
 				<td style="width:50%;padding:1%;">
-					<p style="text-align:left;font-family:'Dejavu Sans Mono';">OTHER DJs</p>
-				</td>
-			</tr>
-			<tr>
-				<td style="width:50%;padding:1%;">
-					<p style="text-align:right;font-family:'Dejavu Sans Mono';">JNN KPN</p>
-				</td>
-				<td style="width:50%;padding:1%;">
-					<p style="text-align:left;font-family:'Dejavu Sans Mono';">JNN KPN</p>
+					<p style="text-align:left;">ARYUJASSIKA</p>
 				</td>
 			</tr>
 			<tr>
 				<td style="width:50%;padding:1%;">
-					<p style="text-align:right;font-family:'Dejavu Sans Mono';">ROSE BONICA</p>
+					<p style="text-align:right;">OTHER DJs</p>
 				</td>
 				<td style="width:50%;padding:1%;">
-					<p style="text-align:left;font-family:'Dejavu Sans Mono';">ROSE BONICA</p>
-				</td>
-			</tr>
-			<tr>
-				<td style="width:50%;padding:1%;">
-					<p style="text-align:right;font-family:'Dejavu Sans Mono';">LADY VENOM</p>
-				</td>
-				<td style="width:50%;padding:1%;">
-					<p style="text-align:left;font-family:'Dejavu Sans Mono';">LADY VENOM</p>
+					<p style="text-align:left;">OTHER DJs</p>
 				</td>
 			</tr>
 			<tr>
 				<td style="width:50%;padding:1%;">
-					<p style="text-align:right;font-family:'Dejavu Sans Mono';">KEVIN MURNING</p>
+					<p style="text-align:right;">JNN KPN</p>
 				</td>
 				<td style="width:50%;padding:1%;">
-					<p style="text-align:left;font-family:'Dejavu Sans Mono';">KEVIN MURNING</p>
-				</td>
-			</tr>
-			<tr>
-				<td style="width:50%;padding:1%;">
-					<p style="text-align:right;font-family:'Dejavu Sans Mono';">SANETRAN</p>
-				</td>
-				<td style="width:50%;padding:1%;">
-					<p style="text-align:left;font-family:'Dejavu Sans Mono';">SANETRAN</p>
+					<p style="text-align:left;">JNN KPN</p>
 				</td>
 			</tr>
 			<tr>
 				<td style="width:50%;padding:1%;">
-					<p style="text-align:right;font-family:'Dejavu Sans Mono';">MAXIME ALEXANDER</p>
+					<p style="text-align:right;">ROSE BONICA</p>
 				</td>
 				<td style="width:50%;padding:1%;">
-					<p style="text-align:left;font-family:'Dejavu Sans Mono';">MAXIME ALEXANDER</p>
-				</td>
-			</tr>
-			<tr>
-				<td style="width:50%;padding:1%;">
-					<p style="text-align:right;font-family:'Dejavu Sans Mono';">JOYMODE B2B JUSTIN SLACK</p>
-				</td>
-				<td style="width:50%;padding:1%;">
-					<p style="text-align:left;font-family:'Dejavu Sans Mono';">JOYMODE B2B JUSTIN SLACK</p>
+					<p style="text-align:left;">ROSE BONICA</p>
 				</td>
 			</tr>
 			<tr>
 				<td style="width:50%;padding:1%;">
-					<p style="text-align:right;font-family:'Dejavu Sans Mono';">ZARA JULIUS</p>
+					<p style="text-align:right;">LADY VENOM</p>
 				</td>
 				<td style="width:50%;padding:1%;">
-					<p style="text-align:left;font-family:'Dejavu Sans Mono';">ZARA JULIUS</p>
+					<p style="text-align:left;">LADY VENOM</p>
 				</td>
 			</tr>
 			<tr>
 				<td style="width:50%;padding:1%;">
-					<p style="text-align:right;font-family:'Dejavu Sans Mono';">XEE & CODEKID</p>
+					<p style="text-align:right;">KEVIN MURNING</p>
 				</td>
 				<td style="width:50%;padding:1%;">
-					<p style="text-align:left;font-family:'Dejavu Sans Mono';">XEE & CODEKID</p>
+					<p style="text-align:left;">KEVIN MURNING</p>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:right;">SANETRAN</p>
+				</td>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:left;">SANETRAN</p>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:right;">MAXIME ALEXANDER</p>
+				</td>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:left;">MAXIME ALEXANDER</p>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:right;">JOYMODE B2B JUSTIN SLACK</p>
+				</td>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:left;">JOYMODE B2B JUSTIN SLACK</p>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:right;">ZARA JULIUS</p>
+				</td>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:left;">ZARA JULIUS</p>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:right;">XEE & CODEKID</p>
+				</td>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:left;">XEE & CODEKID</p>
 				</td>
 			</tr>
 		</table>
@@ -168,42 +232,51 @@
 		</br>
 	</div>
 	<div>
-		<h2 style="text-align:center;font-family:'Dejavu Sans Mono';"><b>LOCATION</b></h2>
+		<h2 style="text-align:center;"><b>LOCATION</b></h2>
 		</br>
 		</br>
-    		<p style="text-align:center;font-family:'Dejavu Sans Mono';">SPECIAL LOCATION IN</p>
-		<p style="text-align:center;font-family:'Dejavu Sans Mono';">SWELLENDAM, SOUTH AFRICA</p>
-		</br>
-		</br>
-		</br>
-	</div>
-	<div>
-		<h2 style="text-align:center;font-family:'Dejavu Sans Mono';"><b>TICKETS</b></h2>
-		</br>
-		</br>
-    		<p style="text-align:center;font-family:'Dejavu Sans Mono';">SEARCH IS SMALL INDEPENDENTLY-RUN EVENT</p>
-		<p style="text-align:center;font-family:'Dejavu Sans Mono';">YOU ARE SPECIAL, BUT TICKETS ARE LIMITED</p>
-		</br>
-		</br>
-    		<p style="text-align:center;font-family:'Dejavu Sans Mono';">EARLY BIRD – R390</p>
-		<p style="text-align:center;font-family:'Dejavu Sans Mono';">NORMAL BIRD – R490</p>
-		<p style="text-align:center;font-family:'Dejavu Sans Mono';">LATE BIRD – R590</p>
-		</br>
-		</br>
-		<button type="button" style="margin:auto;display:block;"><p style="text-align:center;font-family:'Dejavu Sans Mono';">BUY TICKETS</p></button>
+    		<p style="text-align:center;">SPECIAL LOCATION IN</p>
+		<p style="text-align:center;">SWELLENDAM, SOUTH AFRICA</p>
 		</br>
 		</br>
 		</br>
 	</div>
-	<div>
-		<h2 style="text-align:center;font-family:'Dejavu Sans Mono';"><b>VOLUNTEERS</b></h2>
+	<div style="text-align: center;">
+		<h2><b>TICKETS</b></h2>
 		</br>
 		</br>
-		<a href="https://docs.google.com/forms/d/e/1FAIpQLSf533yWAdkGpnvlHJYP39hXUnn-1NQkFHyqhkNWElpuidl8SA/viewform?usp=sf_link"><button type="button" style="margin:auto;display:block;"><p style="text-align:center;font-family:'Dejavu Sans Mono';">APPLY HERE</p></button></a>
+    		<p>SEARCH IS SMALL INDEPENDENTLY-RUN EVENT</p>
+		<p>YOU ARE SPECIAL, BUT TICKETS ARE LIMITED</p>
+		</br>
+		</br>
+    		<p>EARLY BIRD - R390</p>
+		<p>NORMAL BIRD - R490</p>
+		<p>LATE BIRD - R590</p>
+		</br>
+		</br>
+		<button type="button" class="buttonStyle" onclick="openForm()">BUY TICKETS</button>
 		</br>
 		</br>
 		</br>
 	</div>
+	<div style="text-align: center;">
+		<h2><b>VOLUNTEERS</b></h2>
+		</br>
+		</br>
+		<button type="button" class="buttonStyle"><a href="https://docs.google.com/forms/d/e/1FAIpQLSf533yWAdkGpnvlHJYP39hXUnn-1NQkFHyqhkNWElpuidl8SA/viewform?usp=sf_link" style="text-decoration:none;color:black;">APPLY HERE</a></button>
+		</br>
+		</br>
+		</br>
+		</br>
+		</br>
+	</div>
+  </div>
+  
+  
 </div>
+</br>
+</br>
+</br>
+</br>
   </body>
 </html>
