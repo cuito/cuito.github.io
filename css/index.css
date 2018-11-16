@@ -71,8 +71,8 @@
   background-color: black;
   display:inline;
   left:0;
-  color:#ffff4d;
-  border: 1px solid #ffff4d;
+  color:#f9f38a;
+  border: 1px solid #f9f38a;
   height: 40px;
   width: 120px;
   font-family:'DejaVuSans';
@@ -80,11 +80,11 @@
 
 .buttonStyleSee:hover {
   margin: 0 auto;
-  background-color: #ffff4d;
+  background-color: #f9f38a;
   display:inline;
   left:0;
   color:black;
-  border: 1px solid #ffff4d;
+  border: 1px solid #f9f38a;
   height: 40px;
   width: 120px;
   font-family:'DejaVuSans';
@@ -95,8 +95,8 @@
   background-color: black;
   display:inline;
   left:0;
-  color:#4db8ff;
-  border: 1px solid #4db8ff;
+  color:#65b9f9;
+  border: 1px solid #65b9f9;
   height: 40px;
   width: 120px;
   font-family:'DejaVuSans';
@@ -104,11 +104,11 @@
 
 .buttonStyleBuy:hover {
   margin: 0 auto;
-  background-color: #4db8ff;
+  background-color: #65b9f9;
   display:inline;
   left:0;
   color:black;
-  border: 1px solid #4db8ff;
+  border: 1px solid #65b9f9;
   height: 40px;
   width: 120px;
   font-family:'DejaVuSans';
@@ -119,8 +119,8 @@
   background-color: black;
   display:inline;
   left:0;
-  color:#33ff33;
-  border: 1px solid #33ff33;
+  color:#91f5a3;
+  border: 1px solid #91f5a3;
   height: 40px;
   width: 120px;
   font-family:'DejaVuSans';
@@ -128,11 +128,11 @@
 
 .buttonStyleSignUp:hover {
   margin: 0 auto;
-  background-color: #33ff33;
+  background-color: #91f5a3;
   display:inline;
   left:0;
   color:black;
-  border: 1px solid #33ff33;
+  border: 1px solid #91f5a3;
   height: 40px;
   width: 120px;
   font-family:'DejaVuSans';
@@ -225,6 +225,7 @@ label {
 
 button {
   background-color: white;
+  cursor: pointer;
 }
 
 input[type=radio],
@@ -274,7 +275,7 @@ input.radio {
 
     .popup {
     	z-index: 3;
-    	padding: 5% 5%;
+    	padding: 4% 4%;
     	text-align: center;
     	position: fixed;
     	border: 1px solid black;
@@ -289,7 +290,7 @@ input.radio {
 @media only screen and (max-width: 660px) {
     .popup {
     	z-index: 3;
-    	padding: 5% 5%;
+    	padding: 2% 2%;
     	text-align: center;
     	position: fixed;
 	overflow-x: hidden;
