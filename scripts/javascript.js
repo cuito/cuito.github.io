@@ -15,10 +15,28 @@ function closeTheBoringStuff() {
   document.getElementById("teesAndCees").style.display = "none";
 }
 
+function seeAVisionOfUtopia() {
+  document.getElementById("visionOfUtopia").style.display = "block";
+  document.getElementById("visionOfUtopia").style.zIndex = "4";
+}
+
+function closeAVisionOfUtopia() {
+  document.getElementById("visionOfUtopia").style.display = "none";
+}
+
+function openBankDetails() {
+  document.getElementById("bankDetails").style.display = "block";
+  document.getElementById("bankDetails").style.zIndex = "4";
+}
+
+function closeBankDetails() {
+  document.getElementById("bankDetails").style.display = "none";
+}
+
 var counter = 1;
 function swopScreens() {
   counter++;
-  if (counter % 2 == 0){
+  if (counter % 2 != 0){
 	document.getElementById("toTheRight").style.zIndex = "1";
 	document.getElementById("toTheLeft").style.zIndex = "2";
   }else{
@@ -41,30 +59,35 @@ function swopToRight() {
   }
 }
 
-function phpRequest(){
-    var x = new XMLHttpRequest();
-    var email = document.getElementById("email").value;
-    console.log(email);
-    var url = "function.php?address=" + email;
-    console.log(url);
-    x.open("GET",url,true);
-    console.log("get");
-    x.send();
-    console.log("send");
-    return false;
+function goToGoogleForm() {
+  window.location.assign("https://docs.google.com/forms/d/e/1FAIpQLSf533yWAdkGpnvlHJYP39hXUnn-1NQkFHyqhkNWElpuidl8SA/viewform?usp=sf_link");
+}
+
+function goToMap() {
+  window.location.assign("https://goo.gl/maps/vX3N6xiaVLR2");
 }
 
 function sendEmail() {
-  if (document.getElementById("attitude").value != "kak")
+  if (document.getElementById("attitude").value == "")
   {
-    document.getElementById("kakMessage").style.visibility = "hidden";
-    document.getElementById("successMessage").style.visibility = "visible";
-    phpRequest();
+	document.getElementById("kakMessage").style.visibility = "hidden";
+	document.getElementById("successMessage").style.visibility = "hidden";
+    	document.getElementById("emailMessage").style.visibility = "visible";
   }
   else
   {
-    document.getElementById("successMessage").style.visibility = "hidden";
-    document.getElementById("kakMessage").style.visibility = "visible";
+  	if (document.getElementById("attitude").value != "kak")
+  	{
+		document.getElementById("emailMessage").style.visibility = "hidden";
+    	  	document.getElementById("kakMessage").style.visibility = "hidden";
+		openBankDetails();
+  	}
+  	else
+  	{
+		document.getElementById("emailMessage").style.visibility = "hidden";
+    		document.getElementById("successMessage").style.visibility = "hidden";
+    		document.getElementById("kakMessage").style.visibility = "visible";
+  	}
   }
 }
 

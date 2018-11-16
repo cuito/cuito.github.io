@@ -12,7 +12,7 @@
 .left {
   z-index: 1;
   left: 0;
-  background-color: #111;
+  background-color: black;
 }
 
 /* Control the right side */
@@ -51,6 +51,88 @@
 .buttonStyle {
   margin: 0 auto;
   border: 1px solid black;
+  height: 40px;
+  width: 120px;
+  font-family:'DejaVuSans';
+}
+
+.buttonStyle:hover {
+  color:white;
+  margin: 0 auto;
+  border: 1px solid black;
+  background-color: black;
+  height: 40px;
+  width: 120px;
+  font-family:'DejaVuSans';
+}
+
+.buttonStyleSee {
+  margin: 0 auto;
+  background-color: black;
+  display:inline;
+  left:0;
+  color:#ffff4d;
+  border: 1px solid #ffff4d;
+  height: 40px;
+  width: 120px;
+  font-family:'DejaVuSans';
+}
+
+.buttonStyleSee:hover {
+  margin: 0 auto;
+  background-color: #ffff4d;
+  display:inline;
+  left:0;
+  color:black;
+  border: 1px solid #ffff4d;
+  height: 40px;
+  width: 120px;
+  font-family:'DejaVuSans';
+}
+
+.buttonStyleBuy {
+  margin: 0 auto;
+  background-color: black;
+  display:inline;
+  left:0;
+  color:#4db8ff;
+  border: 1px solid #4db8ff;
+  height: 40px;
+  width: 120px;
+  font-family:'DejaVuSans';
+}
+
+.buttonStyleBuy:hover {
+  margin: 0 auto;
+  background-color: #4db8ff;
+  display:inline;
+  left:0;
+  color:black;
+  border: 1px solid #4db8ff;
+  height: 40px;
+  width: 120px;
+  font-family:'DejaVuSans';
+}
+
+.buttonStyleSignUp {
+  margin: 0 auto;
+  background-color: black;
+  display:inline;
+  left:0;
+  color:#33ff33;
+  border: 1px solid #33ff33;
+  height: 40px;
+  width: 120px;
+  font-family:'DejaVuSans';
+}
+
+.buttonStyleSignUp:hover {
+  margin: 0 auto;
+  background-color: #33ff33;
+  display:inline;
+  left:0;
+  color:black;
+  border: 1px solid #33ff33;
   height: 40px;
   width: 120px;
   font-family:'DejaVuSans';
@@ -119,7 +201,7 @@ h2 {
 
 .popup {
     z-index: 3;
-    padding: 25px 50px;
+    padding: 25px 25px;
     text-align: center;
     position: fixed;
     border: 1px solid black;
@@ -178,14 +260,14 @@ input.radio {
 
     /* Control the left side */
     .left {
-	z-index: 1;
+	z-index: 2;
   	left: 0;
-  	background-color: #111;
+  	background-color: black;
     }
 
     /* Control the right side */
     .right {
-	z-index: 2;
+	z-index: 1;
   	right: 0;
   	background-color: white;
     }

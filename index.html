@@ -14,6 +14,7 @@
   <link rel="stylesheet" type="text/css" href="css/master_a-master.css"/>
   <link rel="stylesheet" type="text/css" href="css/index.css" id="pagesheet"/>
   <script type="text/javascript" src="scripts/javascript.js"></script>
+  <script type="text/javascript" src="scripts/smtp.js"></script>
    </head>
 
   <script type="text/javascript"> 
@@ -31,42 +32,42 @@
  <body>
 <div id="mainContainer" style="z-index:0;">
   <div class="split left" id="toTheLeft">
-	<button type="button" class="buttonStyleFour" onclick="swopScreens()">X</button>
+	<button type="button" class="buttonStyleFour" onclick="swopScreens()">?</button>
 	<table style="width:100%;height:100%">
 		<tr>
 			<td style="width:50%;padding:5%;text-align:left;vertical-align:top;">
-				<h2 style="color:#ff944d;"><b>THE SEARCH</b></h2>
-    				<p style="color:#ff944d;">Music + You</p>
+				<h2 style="color:#ff944d;"><b>SEARCH</b></h2>
+    				<p style="color:#ff944d;">30 Dec '18 - 1 Jan '19</p>
 			</td>
 			<td style="width:50%;padding:5%;text-align:left;vertical-align:top;">
-    				<p style="color:#ff944d;">the search for the himalayan mountain people and the ladder to cosmic consciousness</p>
-			</td>
-		</tr>
-		<tr>
-			<td style="width:50%;padding:5%;text-align:left;vertical-align:top;">
-				<h2 style="color:#ffff4d;"><b>DATES</b></h2>
-    				<p style="color:#ffff4d;">Dec 30 - Jan 1</p>
-			</td>
-			<td style="width:50%;padding:5%;text-align:left;vertical-align:top;">
-    				<p style="color:#ffff4d;">a gathering of humans that fare well into the new year with bountiful positivity</p>
+    				<p style="color:#ff944d;">a gathering of humans that fare well into the new year with bountiful positivity</p>
 			</td>
 		</tr>
 		<tr>
 			<td style="width:50%;padding:5%;text-align:left;vertical-align:top;">
-				<h2 style="color:#4db8ff;"><b>VENUE</b></h2>
-    				<p style="color:#4db8ff;">Utopia</p>
+				<h2 style="color:#ffff4d;"><b>LOCATION</b></h2>
+    				<p style="color:#ffff4d;">Utopia</p>
 			</td>
 			<td style="width:50%;padding:5%;text-align:left;vertical-align:top;">
-    				<p style="color:#4db8ff;">a place close yet remote, special for those who know and those who don't know</p>
+    				<button class="buttonStyleSee" onclick="seeAVisionOfUtopia()">SEE</button>
 			</td>
 		</tr>
 		<tr>
 			<td style="width:50%;padding:5%;text-align:left;vertical-align:top;">
-				<h2 style="color:#33ff33;"><b>TICKETS</b></h2>
-    				<p style="color:#33ff33;">Did you know</p>
+				<h2 style="color:#4db8ff;"><b>TICKETS</b></h2>
+    				<p style="color:#4db8ff;">Limited</p>
 			</td>
 			<td style="width:50%;padding:5%;text-align:left;vertical-align:top;">
-    				<p style="color:#33ff33;">a celebration of the music and times you've had, would rather have, might never have had</p>
+    				<button class="buttonStyleBuy" onclick="openForm()">BUY</button>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:50%;padding:5%;text-align:left;vertical-align:top;">
+				<h2 style="color:#33ff33;"><b>VOLUNTEERS</b></h2>
+    				<p style="color:#33ff33;">Contribute</p>
+			</td>
+			<td style="width:50%;padding:5%;text-align:left;vertical-align:top;">
+    				<button class="buttonStyleSignUp" onclick="goToGoogleForm()">SIGN UP</button>
 			</td>
 		</tr>
 	</table>
@@ -102,19 +103,23 @@
                 </fieldset>
                 </br>
 		</br>
-		<div style="border-bottom: 1px solid black;">
-		  <input type="text" name="email" id="email" placeholder="insert email" style="display:inline;"><button type="button" class="buttonStyleTwo" onclick="sendEmail()" style="display:inline;">SEND</button>
-		</div>
-		<input type="text" id="attitude" name="attitude" style="display:none;">
-		</br>
-		<p class="boring" style="text-align:center;">By entering your email, you confirm that you're:</p>
-		<p class="boring" style="text-align:center;">- aware of the party essentials</p>
+		<p class="boring" style="text-align:center;">By clicking proceed, you confirm that you're:</p>
 		<p class="boring" style="text-align:center;">- have read and agreed to the <button type="button" class="buttonStyleT" onclick="openTheBoringStuff()">Ts and Cs</button></p>
 		<p class="boring" style="text-align:center;">- over 18</p>
 		</br>
-		<p id="successMessage" style="text-align:center;visibility:hidden;">DONE! CHECK YOUR INBOX</p>
-		<p id="kakMessage" style="text-align:center;visibility:hidden;">DON'T BE KAK, BE LEKKER</p>
+		<div>
+		  <button class="buttonStyle" onclick="sendEmail()" style="display:inline;right: 0;">PROCEED</button>
+		</div>
+		<input type="text" id="attitude" name="attitude" style="display:none;">
 		</br>
+		<p id="kakMessage" style="text-align:center;visibility:hidden;">DON'T BE KAK, BE LEKKER</p>
+		<p id="emailMessage" style="text-align:center;visibility:hidden;">PLEASE WYS US YOUR ATTITUDE</p>
+		</br>
+        </div>
+
+	<div id="visionOfUtopia" class="popup" style="display:none;background-image: url("IMG-20181111-WA0007.jpg");">
+		<button type="button" class="buttonStyleThree" onclick="closeAVisionOfUtopia()">X</button>
+		<img src="Search-venue-revamp.jpg" style="max-height:60%;max-width:100%">
         </div>
 
   <div id="teesAndCees" class="popup" style="display:none;overflow-x: hidden;">
@@ -167,8 +172,28 @@
 	</div>
   </div>
 
+  <div id="bankDetails" class="popup" style="display:none;overflow-x: hidden;">
+	<div>
+		<button type="button" class="buttonStyleThree" onclick="closeBankDetails()">X</button>
+                <h2><b>BANK DETAILS</b></h2>
+		</br>
+    		<p>BANK</p>
+		<p><b>NEDBANK PTY LTD</b></p>
+		</br>
+    		<p>ACCOUNT TYPE</p>
+		<p><b>SAVINGS ACCOUNT</b></p>
+		</br>
+    		<p>ACCOUNT NUMBER</p>
+		<p><b>2010058259</b></p>
+		</br>
+    		<p>BRANCH CODE</p>
+		<p><b>198765</b></p>
+		</br>
+	</div>
+  </div>
+
   <div class="split right" id="toTheRight">
-	<button type="button" class="buttonStyleFour" onclick="swopScreens()">?</button>
+	<button type="button" class="buttonStyleFour" onclick="swopScreens()">X</button>
 	<div>
 		</br>
 		<h2 style="text-align:center;"><b>SEARCH</b></h2>
@@ -187,6 +212,14 @@
 		<table style="width:100%;height:100%">
 			<tr>
 				<td style="width:50%;padding:1%;">
+					<p style="text-align:right;">SAM HEUERMANN</p>
+				</td>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:left;">SAM HEUERMANN</p>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:50%;padding:1%;">
 					<p style="text-align:right;">CUITO</p>
 				</td>
 				<td style="width:50%;padding:1%;">
@@ -195,18 +228,66 @@
 			</tr>
 			<tr>
 				<td style="width:50%;padding:1%;">
-					<p style="text-align:right;">ARYUJASSIKA</p>
+					<p style="text-align:right;">ALBANY LORE</p>
 				</td>
 				<td style="width:50%;padding:1%;">
-					<p style="text-align:left;">ARYUJASSIKA</p>
+					<p style="text-align:left;">ALBANY LORE</p>
 				</td>
 			</tr>
 			<tr>
 				<td style="width:50%;padding:1%;">
-					<p style="text-align:right;">OTHER DJs</p>
+					<p style="text-align:right;">GOURMET</p>
 				</td>
 				<td style="width:50%;padding:1%;">
-					<p style="text-align:left;">OTHER DJs</p>
+					<p style="text-align:left;">GOURMET</p>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:right;">QUEEZY</p>
+				</td>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:left;">QUEEZY</p>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:right;">THOR RIXON</p>
+				</td>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:left;">THOR RIXON</p>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:right;">JON LAURA</p>
+				</td>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:left;">JON LAURA</p>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:right;">JNN KPN</p>
+				</td>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:left;">JNN KPN</p>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:right;">SANETRAN</p>
+				</td>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:left;">SANETRAN</p>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:right;">ROSE BONICA</p>
+				</td>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:left;">ROSE BONICA</p>
 				</td>
 			</tr>
 			<tr>
@@ -227,26 +308,42 @@
 			</tr>
 			<tr>
 				<td style="width:50%;padding:1%;">
+					<p style="text-align:right;">LOUIS</p>
+				</td>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:left;">LOUIS</p>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:right;">BUUJIN BUJEE</p>
+				</td>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:left;">BUUJIN BUJEE</p>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:right;">INTRINSIC AUDIO SESSIONS</p>
+				</td>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:left;">INTRINSIC AUDIO SESSIONS</p>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:right;">SUKUMMAH</p>
+				</td>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:left;">SUKUMMAH</p>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:50%;padding:1%;">
 					<p style="text-align:right;">LADY VENOM</p>
 				</td>
 				<td style="width:50%;padding:1%;">
 					<p style="text-align:left;">LADY VENOM</p>
-				</td>
-			</tr>
-			<tr>
-				<td style="width:50%;padding:1%;">
-					<p style="text-align:right;">KEVIN MURNING</p>
-				</td>
-				<td style="width:50%;padding:1%;">
-					<p style="text-align:left;">KEVIN MURNING</p>
-				</td>
-			</tr>
-			<tr>
-				<td style="width:50%;padding:1%;">
-					<p style="text-align:right;">SANETRAN</p>
-				</td>
-				<td style="width:50%;padding:1%;">
-					<p style="text-align:left;">SANETRAN</p>
 				</td>
 			</tr>
 			<tr>
@@ -259,26 +356,58 @@
 			</tr>
 			<tr>
 				<td style="width:50%;padding:1%;">
+					<p style="text-align:right;">GARY MORRIS</p>
+				</td>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:left;">GARY MORRIS</p>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:right;">KEVIN MURNING</p>
+				</td>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:left;">KEVIN MURNING</p>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:right;">0_0_0_0</p>
+				</td>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:left;">0_0_0_0</p>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:right;">SUPER BLACK TAPES</p>
+				</td>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:left;">SUPER BLACK TAPES</p>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:right;">THE OTHER DJs</p>
+				</td>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:left;">THE OTHER DJs</p>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:right;">SLOW MOTION CITY</p>
+				</td>
+				<td style="width:50%;padding:1%;">
+					<p style="text-align:left;">SLOW MOTION CITY</p>
+				</td>
+			</tr>
+			<tr>
+				<td style="width:50%;padding:1%;">
 					<p style="text-align:right;">JOYMODE B2B JUSTIN SLACK</p>
 				</td>
 				<td style="width:50%;padding:1%;">
 					<p style="text-align:left;">JOYMODE B2B JUSTIN SLACK</p>
-				</td>
-			</tr>
-			<tr>
-				<td style="width:50%;padding:1%;">
-					<p style="text-align:right;">ZARA JULIUS</p>
-				</td>
-				<td style="width:50%;padding:1%;">
-					<p style="text-align:left;">ZARA JULIUS</p>
-				</td>
-			</tr>
-			<tr>
-				<td style="width:50%;padding:1%;">
-					<p style="text-align:right;">XEE & CODEKID</p>
-				</td>
-				<td style="width:50%;padding:1%;">
-					<p style="text-align:left;">XEE & CODEKID</p>
 				</td>
 			</tr>
 		</table>
@@ -291,7 +420,7 @@
 		</br>
 		</br>
     		<p style="text-align:center;">SPECIAL LOCATION IN</p>
-		<p style="text-align:center;">SWELLENDAM, SOUTH AFRICA</p>
+		<p style="text-align:center;"><button type="button" class="buttonStyleT" onclick="goToMap()">SWELLENDAM, SOUTH AFRICA</button></p>
 		</br>
 		</br>
 		</br>
@@ -318,7 +447,7 @@
 		<h2><b>VOLUNTEERS</b></h2>
 		</br>
 		</br>
-		<button type="button" class="buttonStyle"><a href="https://docs.google.com/forms/d/e/1FAIpQLSf533yWAdkGpnvlHJYP39hXUnn-1NQkFHyqhkNWElpuidl8SA/viewform?usp=sf_link" style="text-decoration:none;color:black;">APPLY HERE</a></button>
+		<button type="button" class="buttonStyle" onclick="goToGoogleForm()">APPLY HERE</button>
 		</br>
 		</br>
 		</br>
