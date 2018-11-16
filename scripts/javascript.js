@@ -68,27 +68,7 @@ function goToMap() {
 }
 
 function sendEmail() {
-  if (document.getElementById("attitude").value == "")
-  {
-	document.getElementById("kakMessage").style.visibility = "hidden";
-	document.getElementById("successMessage").style.visibility = "hidden";
-    	document.getElementById("emailMessage").style.visibility = "visible";
-  }
-  else
-  {
-  	if (document.getElementById("attitude").value != "kak")
-  	{
-		document.getElementById("emailMessage").style.visibility = "hidden";
-    	  	document.getElementById("kakMessage").style.visibility = "hidden";
-		openBankDetails();
-  	}
-  	else
-  	{
-		document.getElementById("emailMessage").style.visibility = "hidden";
-    		document.getElementById("successMessage").style.visibility = "hidden";
-    		document.getElementById("kakMessage").style.visibility = "visible";
-  	}
-  }
+  openBankDetails();
 }
 
 function chooseKak() {
