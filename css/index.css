@@ -17,8 +17,6 @@
 
 /* Control the right side */
 .right {
-  text-align:center;
-  padding: 25px 25px;
   z-index: 1;
   right: 0;
   background-color: white;
