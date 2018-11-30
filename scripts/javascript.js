@@ -163,5 +163,14 @@ function goToArtist(number) {
 		case 23:
 			window.open("https://soundcloud.com/king-recording/cuito-4", "_blank");
 			break;
+		case 24:
+			window.open("https://soundcloud.com/poisonoise/poisonoise-music-guest-mix-episode-25-cody-losper", "_blank");
+			break;
+		case 25:
+			window.open("https://soundcloud.com/soundparkmusic/vicmari-soundpark-b2", "_blank");
+			break;
+		case 26:
+			window.open("https://www.mixcloud.com/stampthewax/manchester-spotlight-sno/", "_blank");
+			break;
 	}
 }
