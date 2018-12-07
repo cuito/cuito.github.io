@@ -170,7 +170,7 @@ function goToArtist(number) {
 			window.open("https://soundcloud.com/soundparkmusic/vicmari-soundpark-b2", "_blank");
 			break;
 		case 26:
-			window.open("https://www.mixcloud.com/stampthewax/manchester-spotlight-sno/", "_blank");
+			window.open("https://www.mixcloud.com/Future_Nostalgia/michael-bhatchjolly-carp_garden-party_retreat_capetown/", "_blank");
 			break;
 	}
 }
