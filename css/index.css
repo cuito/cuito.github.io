@@ -49,6 +49,8 @@
 }
 
 .buttonStyle {
+  text-align:center;
+  vertical-align:middle;
   margin: 0 auto;
   border: 1px solid black;
   height: 40px;
@@ -162,7 +164,7 @@
   color:#91f5a3;
 }
 
-.buttonStyleSignUp:hover ~ .linkForPdf{
+.linkForPdfBlack {
   line-height:40px;
   text-decoration:none;
   color:black;
