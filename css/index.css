@@ -127,9 +127,12 @@
 }
 
 .buttonStyleSignUp {
+  text-align:center;
+  vertical-align:middle;
+  float:left;
+  align:left;
   margin: 0 auto;
   background-color: black;
-  display:inline;
   left:0;
   color:#91f5a3;
   border: 1px solid #91f5a3;
@@ -139,15 +142,30 @@
 }
 
 .buttonStyleSignUp:hover {
+  text-align:center;
+  vertical-align:middle;
+  float:left;
+  align:left;
   margin: 0 auto;
   background-color: #91f5a3;
-  display:inline;
   left:0;
   color:black;
   border: 1px solid #91f5a3;
   height: 40px;
   width: 120px;
   font-family:'DejaVuSans';
+}
+
+.linkForPdf {
+  line-height:40px;
+  text-decoration:none;
+  color:#91f5a3;
+}
+
+.buttonStyleSignUp:hover ~ .linkForPdf{
+  line-height:40px;
+  text-decoration:none;
+  color:black;
 }
 
 .buttonStyleT {
